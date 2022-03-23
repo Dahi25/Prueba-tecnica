@@ -1,0 +1,38 @@
+#formulario{
+    width: 250px;
+    height:230px;
+    padding: 20px;
+    background:linear-gradient(left, #e5e7e8, #5a4ccb,  #3c6ec9 ,#6996db)!important;
+    border: solid 1px black;
+}
+#name{
+    height: 25px;
+    background-color: white; 
+    margin-bottom: 20px;
+    
+}
+#ape{
+    height: 25px;
+    background-color: white; 
+    margin-bottom: 20px;
+    
+}
+#mail{
+    height: 25px;
+    background-color: white; 
+    margin-bottom: 20px;
+    
+}
+#msg{
+    height: 25px;
+    background-color: white; 
+    width: 250px;
+    
+    
+}
+#envio{
+    width: 100px;
+    height: 50px;
+    background-color: black;
+    color: red;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript">
+        function Obtenerdatos(){
+            var namec=document.getElementById('name').value;
+            console.log(namec);
+            document.write("El nombre ingresado es:"+namec)
+            var lastname=document.getElementById('ape').value;
+            console.log(lastname);
+            document.write("El nombre ingresado es:"+lastname)
+            var email=document.getElementById('mail').value;
+            var sms=document.getElementById('msg').value;
+            var contenedorResultado = document.getElementById("resultado");
+
+
+	var resultado1 = document.createElement('p');
+	resultado1.innerText = "Su nombre  es" + namec; // Agregando texto
+	
+
+	var resultado2 = document.createElement('p');
+	resultado2.innerText = "El apellido es" + lastname; // Agregando texto
+
+	var resultado3 = document.createElement('p');
+	resultado3.innerText = "Su correo electronico es:$" + email; // Agregando texto
+
+
+	resultado1.style.color = '#0d47a1';
+	resultado2.style.color = '#0d47a1';
+	resultado3.style.color = '#0d47a1';
+
+
+	contenedorResultado.innerHTML = '';
+
+	// Agregando etiquetas <p> al contenedor del resultado
+	contenedorResultado.append(resultado1);
+	contenedorResultado.append(resultado2);
+	contenedorResultado.append(resultado3);
+
+
+           
+        }
+    </script>
+  </head>
+<body>
+    <form  id="formulario">
+        
+              <input type="text" id="name" name="user_name" placeholder="Nombre">
+              <input type="text" id="ape" name="apelli" placeholder="Apellido">
+              <input type="email" id="mail" name="user_mail"placeholder="Correo electrónico"> 
+              <textarea id="msg" name="user_message" placeholder="Mensaje"></textarea>
+              <button type="button" id="envio" onclick="Obtenerdatos()">Enviar</button>
+                <div id="resultado"></div>
+            
+            
+          
+  </form>
+
+</body>
+</html>
