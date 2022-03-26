@@ -4,36 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <title>Document</title>
     <script type="text/javascript">
         function Obtenerdatos(){
             var namec=document.getElementById('name').value;
             console.log(namec);
-            document.write("El nombre ingresado es:"+namec)
-            var lastname=document.getElementById('ape').value;
-            console.log(lastname);
-            document.write("El nombre ingresado es:"+lastname)
-            var email=document.getElementById('mail').value;
-            var sms=document.getElementById('msg').value;
+            var phone=document.getElementById('phone').value;
+            console.log(phone);
+             var email=document.getElementById('mail').value;
+            console.log(email);
+           
             var contenedorResultado = document.getElementById("resultado");
 
 
 	var resultado1 = document.createElement('p');
-	resultado1.innerText = "Su nombre  es" + namec; // Agregando texto
+	resultado1.innerText = "Nombre  ingresado:" + namec; // Agregando texto
 	
 
 	var resultado2 = document.createElement('p');
-	resultado2.innerText = "El apellido es" + lastname; // Agregando texto
+	resultado2.innerText = "Numero de celular de contacto:" + phone; // Agregando texto
 
 	var resultado3 = document.createElement('p');
-	resultado3.innerText = "Su correo electronico es:$" + email; // Agregando texto
+	resultado3.innerText = "Correo electrónico :" + email; // Agregando texto
 
 
 	resultado1.style.color = '#0d47a1';
 	resultado2.style.color = '#0d47a1';
 	resultado3.style.color = '#0d47a1';
-
+ 
 
 	contenedorResultado.innerHTML = '';
 
@@ -43,23 +44,154 @@
 	contenedorResultado.append(resultado3);
 
 
+      if(namec,phone,email===""){
+        Swal.fire({
+  icon: 'error',
+  title: 'Algo salio mal...',
+  text: 'Todos los campos deben estar llenos!',
+ })
+     }
            
         }
     </script>
-  </head>
+</head>
 <body>
-    <form  id="formulario">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <a class="navbar-brand" href="#">
+                <img  class="logo"src="img/LEGALDER.jpg"  alt="" width="200px" height="100px">
+               </a>
+            <li class="nav-item">
+               <a class="nav-link" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Qué hacemos </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Nuetro equipo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">Preguntas frecuentes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="row g-0">
+        <div class="col box1">
+          <img class="img-fluid" src="img/ejecutivo.jpg" alt="">
+        </div>
+        <div class="col box2">
+            <div class="box-form">
+                <form>
+                    <div class="mb-3">
+                      <div class="logo">
+                      <img src="img/LEGALDER.jpg"  alt="" width="200px" height="100px">
+                      </div>
+                      <h7 class="datos"> Desde ya  podemos asesorarte,dejanos tu inquietud llenando los siguientes datos:</h7>
+                        <input type="tex" class="form-control" id="name" placeholder="Nombre">
+                      </div>
+                    <div class="mb-3">
+                      <input type="number" class="form-control" id="phone" placeholder="Numero de celular de contacto">
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" id="mail" placeholder="Correo electrónico">
+                      </div>
+                 <button type="button" id="envio" onclick="Obtenerdatos()">Enviar</button>
+                    <div id="resultado"></div>
+                
+                </form>
+            </div>
+        </div>
+      </div>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h2 class="display-4">Qué hacemos </h2>
+            <h1 class="display-5">Líneas de Servicio</h1>
+          <p class="lead">Nuestro portafolio ofrece  soluciones en marcas legales.</p>
+            <!-- Cuadrar lo de  la cuadricula de las imagenes-->
+                <div class="-cols- -cols -cols  -cols-md-4 gx-3">
+                  <div class="row gx-3">
+             <div class="col ">
+                <div class="card  border-0" style= "width: 100%;">
+                  <img class="card-img-top" src="img/civil.jpg" alt="Card image cap">
+                  <div class="card-body"style="background-color: black; color: white;">
+                    <h5 class="card-title">Civiles</h5>
+                  </div>
+                  </div>
+                </div>
+                
+              <div class="col">
+                <div class="card  border-0"style= "width: 100%;">
+                  <img class="card-img-top" src="img/colombia.jpg" alt="Card image cap">
+                  <div class="card-body"style="background-color: black; color: white;">
+                    <h5 class="card-title">Constitucionales</h5>
+                  </div>
+                  </div>
+                </div>
+               <div class="col">
+                <div class="card  border-0"style= "width: 100%;">
+                  <img class="card-img-top" src="img/administrativos2.webp" alt="Card image cap">
+                  <div class="card-body"style="background-color: black; color: white;">
+                    <h5 class="card-title">Administrativos</h5>
+                  </div>
+                  </div>
+                </div>
         
-              <input type="text" id="name" name="user_name" placeholder="Nombre">
-              <input type="text" id="ape" name="apelli" placeholder="Apellido">
-              <input type="email" id="mail" name="user_mail"placeholder="Correo electrónico"> 
-              <textarea id="msg" name="user_message" placeholder="Mensaje"></textarea>
-              <button type="button" id="envio" onclick="Obtenerdatos()">Enviar</button>
-                <div id="resultado"></div>
-            
-            
-          
-  </form>
+                 <div class="col">
+                     <div class="card  border-0"style= "width: 100%;">
+                    <img class="card-img-top" src="img/empresariales.jpg" alt="Card image cap">
+                    <div class="card-body"style="background-color: black; color: white;">
+                      <h5 class="card-title">Empresariales</h5>
+                    </div>
+                    </div>
+                  </div>
+                 </div>
+              </div>
+               </div>
+      </div>
+              <div id="slider">
+                <div class="jumbotron">
+                  <div class="row">
+                    <div class="col box3 row gx-0">
+                      <img class="img-fluid" src="img/elegante.jpg" alt="">
+                    </div>
+                   <div class="col box4 ">
+                      <h3 class="nuestro">Nuestro equipo</h3>
+                     <h1 class="equipo">El mejor grupo Jurídico </h1>
+                     <h5 class="mejor"> Nuestro equipo de trabajo es el de más alto nivel profesional.</h5>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="jumbotron">
+                  <h1 class="display-6">Preguntas frecuentes</h1>
+                  <h6  class="finalp">Consulta una de las dudas más comunes</h6>
+                  <h3 class="pregunta"> Primera pregunta</h3>
+                  <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  <h3 class="pregunta"> Segunda pregunta</h3>
+                  <br>
+                  <h3 class="pregunta"> Tercera pregunta</h3>
+                  <h2 class="fuentes"> Fuentes</h2>
+                  <h4 class="autor"> Poppins</h4>
+                </div>
+              
+              
+              
+              
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
 </html>
